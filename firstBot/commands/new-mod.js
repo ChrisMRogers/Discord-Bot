@@ -1,10 +1,10 @@
 
-const {modChoices} = require('../config.json');
+const {modChoices, serverAdmin} = require('../config.json');
 module.exports = {
     name: 'new-mod',
-    description: 'Chooses a new mod based on list of \'The Boys\'!',
+    description: 'Chooses a new mod based on list of mod choices within Config',
     execute(message, args){
-        if(message.author.id === '179051661413711872'){
+        if(message.author.id === serverAdmin){
             const choices = modChoices;
         message.channel.send(`Rolling a d${choices.length}...`)
         setTimeout(() => {const index = Math.floor(Math.random() * choices.length);
