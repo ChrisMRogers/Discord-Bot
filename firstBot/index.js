@@ -1,7 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-const friday = require('./commands/friday');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -20,11 +19,8 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	let day = new Date().getDay();
-	if (day == 1) {
-		//friday.execute()
-	}
 });
+
 client.on('message', (message) => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
