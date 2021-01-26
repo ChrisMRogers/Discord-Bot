@@ -3,6 +3,7 @@ module.exports = {
 	aliases: ['r'],
 	args: true,
 	usage: '[(#dice)d(dice size)]',
+	description: `Rolls x dice of y size and returns the total.`,
 	cooldown: 5,
 	execute(message, args) {
 		const dice = args[0].split('d');

@@ -1,16 +1,18 @@
 const { modChoices, serverAdmin } = require('../config.json');
 module.exports = {
-	name: 'new-mod',
+	name: 'friday',
 	description: 'Chooses a new mod based on list of mod choices within Config',
 	execute(message) {
-		if (message.author.id === serverAdmin) {
+
+		if (message.author.id === serverAdmin || message.author.bot) {
 			const choices = modChoices;
+			console.log(choices[2])
 			message.channel.send(`Rolling a d${choices.length}...`);
+			const index = Math.floor(Math.random() * choices.length);
 			setTimeout(() => {
-				const index = Math.floor(Math.random() * choices.length);
-				message.channel.send(`And the choice is @${choices[index]}!`);
-			}, 2000);
-			message.channel.send(`ID: ${message.author.id}`);
+				message.channel.send(`And the choice is ${choices[index]}!`);
+			}, 2500);
+			//message.channel.send(`ID: ${message.author.id}`);
 		}
 		else {
 			message.reply('you don\'t have permission to run this command!');
