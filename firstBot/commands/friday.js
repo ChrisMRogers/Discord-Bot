@@ -1,6 +1,7 @@
 const { modChoices, serverAdmin } = require('../config.json');
 module.exports = {
 	name: 'friday',
+	aliases: ['fr', 'new'],
 	description: 'Chooses a new mod based on list of mod choices within Config',
 	execute(message) {
 
